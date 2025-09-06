@@ -13,8 +13,7 @@ h1{
 }
 
 .ventana{
-  background-color: rgb(255, 255, 255);       
-  padding: 20px;                 
+  background-color: rgb(255, 255, 255);                      
   max-width: 800px;              
   width: 90%;                    
   border-radius: 10px;           
@@ -37,7 +36,7 @@ main{
 }
 
 
-.filtros input[type="text"] {
+.filtros input{
   padding: 10px 12px;
   border: 2px solid #ccc;
   border-radius: 8px;
@@ -48,7 +47,7 @@ main{
   
 }
 
-.filtros input[type="text"]:focus {
+.filtros input:focus {
   border-color: #4a90e2;
   box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
 }
@@ -75,11 +74,21 @@ main{
 }
 button{
     padding: 10px;
-    background-color: rgb(136, 136, 221);
+    background-color: royalblue;
     border-radius: 8px;
-    border: 1px 
+    border: 1px solid navy;
+    transition: 1s;
 
 }
-
+button:hover{
+    background-color: navy;
+    cursor: pointer;
+    color: white;
+}
+header{
+    background-color: rgb(134, 134, 176);
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+}
 
 
