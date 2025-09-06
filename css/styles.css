@@ -1,0 +1,85 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(204, 204, 255);
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 0cm;
+}
+
+.ventana{
+  background-color: rgb(255, 255, 255);       
+  padding: 20px;                 
+  max-width: 800px;              
+  width: 90%;                    
+  border-radius: 10px;           
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+  text-align: center;
+
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.filtros {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.filtros input[type="text"] {
+  padding: 10px 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+  width: 200px;
+  
+}
+
+.filtros input[type="text"]:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Select de tareas */
+.filtros select {
+  padding: 10px 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filtros select:hover {
+  border-color: #4a90e2;
+}
+
+.filtros select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+button{
+    padding: 10px;
+    background-color: rgb(136, 136, 221);
+    border-radius: 8px;
+    border: 1px 
+
+}
+
+
+
