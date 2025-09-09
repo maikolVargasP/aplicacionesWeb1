@@ -90,5 +90,25 @@ header{
     padding: 20px;
     border-radius: 10px 10px 0 0;
 }
+.contadores {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}   
+.contador {
+  text-align: center;
+}    
+.contador h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+.contador p {
+  margin: 5px 0 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
 

@@ -1,52 +1,63 @@
  <!DOCTYPE html>
- <html lang="en">
+ <html lang="es">
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tareas diarias</title>
     <link rel="stylesheet" href="../css/styles.css">
-    
  </head>
  <body>
+    
     <main>
         <div class="ventana"> 
-        <header>
-            <h1>Administrador de Tareas</h1>
-            <p>Organiza y gestiona tus tareas diarias de manera eficiente</p>
-        </header>
-        <br>
-        <div class="filtros">
-            <input type="date">
-            <input type="text" placeholder="Descripcion de la tarea">
-            <button> + Agregar Tarea</button>
-        </div>
-            <br>
-            <div class="filtros">
-                <input type="text"  placeholder="Buscar tarea">
-                <select >
-                    
-                    <Label><Option>Todas las tareas</Option></Label>
-                    <option value="">Pendientes</option>
-                    <option value="">Completadas</option>
-                </select>
-            </div>  
-        
-
-        <section>
-            <h2>Tareas Pendientes</h2>
-            <ul></ul>
-        </section>
-        
-        <section>
-            <h2>Historial de Tareas Completadas</h2>
-            <ul></ul>
-        </section></div>  
+       <header>
+           <h1>Administrador de Tareas</h1>
+           <p>Organiza y gestiona tus tareas diarias de manera eficiente</p>
+       </header>
+       <div class="contadores">
+           <div class="contador">
+               <h3>Total</h3>
+               <p id="total-tareas">0</p>
+           </div>
+           <div class="contador">
+               <h3>Pendientes</h3>
+               <p id="pendientes-tareas">0</p>
+           </div>
+           <div class="contador">
+               <h3>Completadas</h3>
+               <p id="completadas-tareas">0</p>
+           </div>
+       </div>
+       
+       <div class="filtros">
+           <input type="date" id="fecha-tarea">
+           <input type="text" id="descripcion-tarea" placeholder="Descripción de la tarea">
+           <button id="agregar-tarea"> + Agregar Tarea</button>
+       </div>
+       
+       <div class="filtros">
+           <input type="text" id="buscar-tarea" placeholder="Buscar tarea">
+           <select id="filtro-estado">
+               <option value="todas">Todas las tareas</option>
+               <option value="pendientes">Pendientes</option>
+               <option value="completadas">Completadas</option>
+           </select>
+       </div>  
+       
+       <section id="seccion-pendientes">
+           <h2>Tareas Pendientes</h2>
+           <ul id="lista-pendientes"></ul>
+       </section>
+       
+       <section id="seccion-completadas">
+           <h2>Historial de Tareas Completadas</h2>
+           <ul id="lista-completadas"></ul>
+       </section>
+       </div>
     </main>
-    <script src="../index.js"></script>
+    <script src="/js/index.js"></script>
  </body>
- 
  </html>
-
     
 
 
