@@ -110,5 +110,37 @@ header{
   font-size: 1.5em;
   font-weight: bold;
 }
-
+.tarea-pendiente span {
+    color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+}
+.tarea-completada span {
+    color: gray;
+    text-decoration: line-through;
+}
+button.btn-completar {
+    margin-left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button.btn-completar:hover {
+    background-color: #45a049;
+}
+button.btn-eliminar {
+    margin-left: 5px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+section ul{
+    list-style: none;
+}
 
