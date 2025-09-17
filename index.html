@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORAMA</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+      <div class="contenedor">
+        <header>
+            <h1>MEMORAMA</h1>
+            <p class="subtitulo">Encuentra todas las parejas de cartas</p>
+        </header>
+        
+        <div class="juego-contenido">
+            <div class="panel-izquierdo">
+                <div class="seccion">
+                    <h2><i class="fas fa-sliders-h"></i> Nivel de Dificultad</h2>
+                    <div class="dificultad-opciones">
+                        <button class="dificultad-btn facil activo">
+                            <i class="fas fa-leaf"></i> Fácil
+                        </button>
+                        <button class="dificultad-btn medio">
+                            <i class="fas fa-balance-scale"></i> Medio
+                        </button>
+                        <button class="dificultad-btn dificil">
+                            <i class="fas fa-fire"></i> Difícil
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="seccion">
+                    <h2><i class="fas fa-redo"></i> Intentos</h2>
+                    <div class="intentos">0</div>
+                </div>
+                
+                <div class="seccion">
+                    <button class="reiniciar-btn">
+                        <i class="fas fa-sync-alt"></i> Reiniciar Juego
+                    </button>
+                </div>
+                
+                <div class="seccion">
+                    <h2><i class="fas fa-trophy"></i> Mejores Puntuaciones</h2>
+                    <div class="puntuaciones">
+                        <div class="puntuacion-item">
+                            <span class="puntuacion-nivel">Fácil:</span>
+                            <span class="puntuacion-valor">Sin datos</span>
+                        </div>
+                        <div class="puntuacion-item">
+                            <span class="puntuacion-nivel">Medio:</span>
+                            <span class="puntuacion-valor">Sin datos</span>
+                        </div>
+                        <div class="puntuacion-item">
+                            <span class="puntuacion-nivel">Difícil:</span>
+                            <span class="puntuacion-valor">Sin datos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="panel-derecho">
+                <div class="tablero">
+                    <!-- Cartas generadas por JavaScript -->
+                </div>
+                <div class="mensaje-ganador">
+                    ¡Felicidades! Has completado el juego.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
