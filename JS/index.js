@@ -18,11 +18,11 @@ const contadorTiempo = document.querySelector('.tiempo');
 const botonReiniciar = document.querySelector('.reiniciar-btn');
 const botonesDificultad = document.querySelectorAll('.dificultad-btn');
 const mensajeGanador = document.querySelector('.mensaje-ganador');
-const puntuacionFacil = document.getElementById('puntuacion-facil');
-const puntuacionMedio = document.getElementById('puntuacion-medio');
-const puntuacionDificil = document.getElementById('puntuacion-dificil');
+const mensajeRecord = document.getElementById('mensaje-record');
 const botonGuardarPuntuacion = document.getElementById('guardar-puntuacion');
 const botonLimpiarPuntuaciones = document.getElementById('limpiar-puntuaciones');
+const puntuacionesBody = document.getElementById('puntuaciones-body');
+const sinPuntuaciones = document.getElementById('sin-puntuaciones');
 
 // Configuraciones por dificultad
 const configuraciones = {
@@ -31,7 +31,7 @@ const configuraciones = {
     'dificil': { pares: 12, columnas: 4 }
 };
 
-// Imágenes para las cartas 
+// Imágenes para las cartas
 const imagenes = [
     'images/equipo1.png',
     'images/equipo2.png',
@@ -76,6 +76,93 @@ function iniciarCronometro() {
 // Función para detener el cronómetro
 function detenerCronometro() {
     clearInterval(intervaloTiempo);
+}
+
+// Obtener puntuaciones guardadas
+function obtenerPuntuaciones() {
+    const puntuacionesGuardadas = localStorage.getItem('puntuacionesMemorama');
+    return puntuacionesGuardadas ? JSON.parse(puntuacionesGuardadas) : {
+        facil: null,
+        medio: null,
+        dificil: null
+    };
+}
+
+// Guardar puntuaciones
+function guardarPuntuaciones(puntuaciones) {
+    localStorage.setItem('puntuacionesMemorama', JSON.stringify(puntuaciones));
+}
+
+// Mostrar puntuaciones en la tabla
+function mostrarPuntuaciones() {
+    const puntuaciones = obtenerPuntuaciones();
+    let hayPuntuaciones = false;
+    
+    puntuacionesBody.innerHTML = '';
+    
+    for (const [dificultad, record] of Object.entries(puntuaciones)) {
+        if (record) {
+            hayPuntuaciones = true;
+            const fila = document.createElement('tr');
+            
+            const celdaDificultad = document.createElement('td');
+            celdaDificultad.textContent = dificultad.charAt(0).toUpperCase() + dificultad.slice(1);
+            
+            const celdaIntentos = document.createElement('td');
+            celdaIntentos.textContent = record.intentos;
+            
+            const celdaTiempo = document.createElement('td');
+            celdaTiempo.textContent = formatearTiempo(record.tiempo);
+            
+            fila.appendChild(celdaDificultad);
+            fila.appendChild(celdaIntentos);
+            fila.appendChild(celdaTiempo);
+            
+            puntuacionesBody.appendChild(fila);
+        }
+    }
+    
+    sinPuntuaciones.style.display = hayPuntuaciones ? 'none' : 'block';
+}
+
+// Verificar si la puntuación actual es un récord
+function verificarRecord() {
+    const puntuaciones = obtenerPuntuaciones();
+    const recordActual = puntuaciones[dificultad];
+    
+    if (!recordActual || 
+        movimientos < recordActual.intentos || 
+        (movimientos === recordActual.intentos && tiempoSegundos < recordActual.tiempo)) {
+        
+        mensajeRecord.textContent = '¡Nuevo récord!';
+        botonGuardarPuntuacion.style.display = 'inline-block';
+    } else {
+        mensajeRecord.textContent = `Récord actual: ${recordActual.intentos} intentos, ${formatearTiempo(recordActual.tiempo)}`;
+        botonGuardarPuntuacion.style.display = 'none';
+    }
+}
+
+// Guardar la puntuación actual
+function guardarPuntuacionActual() {
+    const puntuaciones = obtenerPuntuaciones();
+    puntuaciones[dificultad] = {
+        intentos: movimientos,
+        tiempo: tiempoSegundos,
+        fecha: new Date().toISOString()
+    };
+    
+    guardarPuntuaciones(puntuaciones);
+    mostrarPuntuaciones();
+    botonGuardarPuntuacion.style.display = 'none';
+    mensajeRecord.textContent = '¡Puntuación guardada!';
+}
+
+// Limpiar todas las puntuaciones
+function limpiarPuntuaciones() {
+    if (confirm('¿Estás seguro de que quieres eliminar todas las puntuaciones guardadas?')) {
+        localStorage.removeItem('puntuacionesMemorama');
+        mostrarPuntuaciones();
+    }
 }
 
 // Inicializar el juego
@@ -134,6 +221,8 @@ function inicializarJuego() {
     // Actualizar UI
     contadorIntentos.textContent = movimientos;
     mensajeGanador.style.display = 'none';
+    mensajeRecord.textContent = '';
+    botonGuardarPuntuacion.style.display = 'none';
 
     // Iniciar cronómetro
     iniciarCronometro();
@@ -190,7 +279,7 @@ function voltearCarta(carta) {
 
 // Cambiar dificultad
 botonesDificultad.forEach(boton => {
-    boton.addEventListener('click', function () {
+    boton.addEventListener('click', function() {
         // Remover clase activo de todos los botones
         botonesDificultad.forEach(b => b.classList.remove('activo'));
 
@@ -210,9 +299,17 @@ botonesDificultad.forEach(boton => {
         inicializarJuego();
     });
 });
+
 // Reiniciar juego
 botonReiniciar.addEventListener('click', inicializarJuego);
 
-// Precargar imágenes e iniciar el juego
+// Guardar puntuación
+botonGuardarPuntuacion.addEventListener('click', guardarPuntuacionActual);
+
+// Limpiar puntuaciones
+botonLimpiarPuntuaciones.addEventListener('click', limpiarPuntuaciones);
+
+// Precargar imágenes, mostrar puntuaciones e iniciar el juego
 precargarImagenes();
-inicializarJuego(); 
+mostrarPuntuaciones();
+inicializarJuego();

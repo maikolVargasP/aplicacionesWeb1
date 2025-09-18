@@ -221,3 +221,72 @@ h2 {
     padding: 10px;
     margin-top: 10px;
 }
+
+/* Estilos para la tabla de puntuaciones */
+.puntuaciones {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.puntuaciones-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.puntuaciones-tabla th, .puntuaciones-tabla td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.puntuaciones-tabla th {
+    background-color: #ff7f50;
+    color: white;
+}
+
+.puntuaciones-tabla tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.puntuaciones-tabla tr:hover {
+    background-color: #e6e6e6;
+}
+
+.sin-puntuaciones {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 10px;
+}
+
+.botones-puntuaciones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.boton-puntuacion {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.boton-guardar {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.boton-limpiar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.boton-puntuacion:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}

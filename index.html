@@ -40,18 +40,49 @@
                         <i class="fas fa-sync-alt"></i> Reiniciar Juego
                     </button>
                 </div>
+
+                <!-- Sección de mejores puntuaciones -->
+                <div class="seccion puntuaciones">
+                    <h2><i class="fas fa-trophy"></i> Mejores Puntuaciones</h2>
+                    <div class="puntuaciones-contenido">
+                        <table class="puntuaciones-tabla">
+                            <thead>
+                                <tr>
+                                    <th>Dificultad</th>
+                                    <th>Intentos</th>
+                                    <th>Tiempo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="puntuaciones-body">
+                                <!-- Las puntuaciones se cargarán aquí con JavaScript -->
+                            </tbody>
+                        </table>
+                        <div class="sin-puntuaciones" id="sin-puntuaciones">
+                            No hay puntuaciones guardadas
+                        </div>
+                    </div>
+                    <div class="botones-puntuaciones">
+                        <button class="boton-puntuacion boton-limpiar" id="limpiar-puntuaciones">
+                            <i class="fas fa-trash"></i> Limpiar
+                        </button>
+                    </div>
+                </div>
             </div>
             
             <div class="panel-derecho">
-                    <div class="seccion">
-                        <h2><i class="fas fa-clock"></i> Tiempo</h2>
-                        <div class="tiempo">00:00</div>
-                    </div>
+                <div class="seccion">
+                    <h2><i class="fas fa-clock"></i> Tiempo</h2>
+                    <div class="tiempo">00:00</div>
+                </div>
                 <div class="tablero">
                     <!-- Cartas generadas por JavaScript -->
                 </div>
                 <div class="mensaje-ganador">
                     ¡Felicidades! Has completado el juego.
+                    <div id="mensaje-record"></div>
+                    <button class="boton-puntuacion boton-guardar" id="guardar-puntuacion">
+                        <i class="fas fa-save"></i> Guardar Puntuación
+                    </button>
                 </div>
             </div>
         </div>
