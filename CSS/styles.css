@@ -107,6 +107,11 @@ h2 {
     background-color: #e74c3c;
 }
 
+.dificultad-btn.activo {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .intentos {
     font-size: 32px;
     font-weight: 700;
@@ -130,6 +135,10 @@ h2 {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+.reiniciar-btn:hover {
+    background: #2980b9;
 }
 
 .puntuaciones {
@@ -168,19 +177,52 @@ h2 {
 }
 
 .carta {
+    position: relative;
     width: 100%;
     aspect-ratio: 1;
-    background: #3498db;
     border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+.carta .front, .carta .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carta .front {
+    background: #3498db;
+    color: white;
+    font-size: 2rem;
+}
+
+.carta .back {
+    background: white;
+    transform: rotateY(180deg);
+    padding: 10px;
+}
+
+.carta .back img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.carta.volteada {
+    transform: rotateY(180deg);
+}
+
+.carta.encontrada .back {
+    background: #2ecc71;
 }
 
 .mensaje-ganador {
@@ -194,3 +236,33 @@ h2 {
     display: none;
 }
 
+.botones-puntuaciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.boton-puntuacion {
+    padding: 8px 15px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.boton-puntuacion:hover {
+    background: #2980b9;
+}
+
+@media (max-width: 768px) {
+    .juego-contenido {
+        grid-template-columns: 1fr;
+    }
+    
+    .tablero {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

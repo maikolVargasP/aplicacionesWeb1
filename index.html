@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-      <div class="contenedor">
+       <div class="contenedor">
         <header>
             <h1>MEMORAMA</h1>
             <p class="subtitulo">Encuentra todas las parejas de cartas</p>
@@ -46,16 +46,24 @@
                     <div class="puntuaciones">
                         <div class="puntuacion-item">
                             <span class="puntuacion-nivel">Fácil:</span>
-                            <span class="puntuacion-valor">Sin datos</span>
+                            <span class="puntuacion-valor" id="puntuacion-facil">Sin datos</span>
                         </div>
                         <div class="puntuacion-item">
                             <span class="puntuacion-nivel">Medio:</span>
-                            <span class="puntuacion-valor">Sin datos</span>
+                            <span class="puntuacion-valor" id="puntuacion-medio">Sin datos</span>
                         </div>
                         <div class="puntuacion-item">
                             <span class="puntuacion-nivel">Difícil:</span>
-                            <span class="puntuacion-valor">Sin datos</span>
+                            <span class="puntuacion-valor" id="puntuacion-dificil">Sin datos</span>
                         </div>
+                    </div>
+                    <div class="botones-puntuaciones">
+                        <button class="boton-puntuacion" id="guardar-puntuacion">
+                            <i class="fas fa-save"></i> Guardar
+                        </button>
+                        <button class="boton-puntuacion" id="limpiar-puntuaciones">
+                            <i class="fas fa-trash"></i> Limpiar
+                        </button>
                     </div>
                 </div>
             </div>
