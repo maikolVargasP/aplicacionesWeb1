@@ -49,4 +49,9 @@ body{
   border-radius: 4px;
   cursor: pointer;
 }
-
+img{
+   position: fixed;   
+  bottom: 0;         
+  left: 0;           
+  width: 200px;      
+}

@@ -21,6 +21,12 @@ let usedLetters;
 let mistakes;
 let hits;
 
+const selectedRandomWord = (category) => {
+  let word = categories[category][Math.floor(Math.random() * categories[category].length)];
+  selectedWord = word.split('');
+};
+
+
 const addBodyPart = (bodyPart) => {
   ctx.fillStyle = '#fff';
   ctx.fillRect(...bodyPart);
@@ -41,6 +47,15 @@ const wrongLetter = () => {
 const endGame = () => {
   document.removeEventListener('keydown', letterEvent);
   startButton.style.display = 'block';
+  const result = (hits === selectedWord.length) ? 'Victoria' : 'Derrota';
+  saveHistory(result);
+  updateScore(result);
+};
+const updateScore = (result) => {
+  let stats = JSON.parse(localStorage.getItem('stats')) || { wins: 0, losses: 0 };
+  if (result === 'Victoria') stats.wins++;
+  else stats.losses++;
+  localStorage.setItem('stats', JSON.stringify(stats));
 };
 
 const correctLetter = (letter) => {
@@ -75,11 +90,6 @@ const letterEvent = (event) => {
 };
 
 
-const selectedRandomWord = () => {
-  let word = words[Math.floor(Math.random() * words.length)].toUpperCase();
-  selectedWord = word.split('');
-};
-
 const drawWord = () => {
   selectedWord.forEach((letter) => { 
     const letterElement = document.createElement('span');
@@ -110,11 +120,33 @@ const startGame = () => {
   wordContainer.innerHTML = '';
   usedLettersElement.innerHTML = '';
   startButton.style.display = 'none';
+  
   drawHangMan();
-  selectedRandomWord();
+
+ 
+  const category = document.getElementById('categorySelect').value;
+  selectedRandomWord(category); 
   drawWord();
   document.addEventListener('keydown', letterEvent);
 };
+const saveHistory = (result) => {
+  const history = JSON.parse(localStorage.getItem('history')) || [];
+  history.push({
+    word: selectedWord.join(''),
+    result: result,
+    usedLetters: [...usedLetters],
+    date: new Date().toLocaleString()
+  });
+  localStorage.setItem('history', JSON.stringify(history));
+};
+const showHistory = () => {
+  const history = JSON.parse(localStorage.getItem('history')) || [];
+  console.log("Historial de partidas:", history);
+
+  const stats = JSON.parse(localStorage.getItem('stats')) || { wins: 0, losses: 0 };
+  console.log(`Victorias: ${stats.wins}, Derrotas: ${stats.losses}`);
+};
+
 
 startButton.addEventListener('click', startGame);
 

@@ -1,13 +1,8 @@
-const words = [
-  "guitarra",
-  "computadora",
-  "elefante",
-  "astronauta",
-  "murcielago",
-  "caramelo",
-  "playa",
-  "robot",
-  "tormenta",
-  "dragon",
-  "Maikol"
-];
+
+const categories = {
+  animales: ["PERRO", "GATO", "ELEFANTE"],
+  frutas: ["MANZANA", "BANANA", "FRESA"],
+  paises: ["COLOMBIA", "MEXICO", "ARGENTINA"],
+  aleatorio: ["SALCHICHA","MANGO","COMPUTADOR","MAIKOL"]
+};
+
