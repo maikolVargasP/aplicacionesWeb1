@@ -1,5 +1,5 @@
 
-# aplicacionesWeb1
+# aplicacionesWeb1: Juego de memoria
 El juego consiste en:
 1. Mostrar cartas boca abajo que al hacer clic se volteen.
 2. Al voltear dos cartas, si son iguales permanecen descubiertas; si no, deben volver a taparse.

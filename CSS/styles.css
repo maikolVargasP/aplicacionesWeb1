@@ -141,29 +141,6 @@ h2 {
     background: #2980b9;
 }
 
-.puntuaciones {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.puntuacion-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 15px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.puntuacion-nivel {
-    font-weight: 600;
-}
-
-.puntuacion-valor {
-    color: #666;
-}
-
 .panel-derecho {
     display: flex;
     flex-direction: column;
@@ -236,33 +213,11 @@ h2 {
     display: none;
 }
 
-.botones-puntuaciones {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.boton-puntuacion {
-    padding: 8px 15px;
-    background: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.boton-puntuacion:hover {
-    background: #2980b9;
-}
-
-@media (max-width: 768px) {
-    .juego-contenido {
-        grid-template-columns: 1fr;
-    }
-    
-    .tablero {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.tiempo {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: #ff7f50;
+    padding: 10px;
+    margin-top: 10px;
 }
