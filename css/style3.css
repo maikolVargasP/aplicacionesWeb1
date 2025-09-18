@@ -1,0 +1,52 @@
+.hidden{
+    color: transparent;
+}
+body{
+    background-color: gray;
+    color: white;
+    font-family: 'SF Pixelate', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Contenedor de la palabra */
+#wordContainer {
+  margin-top: 20px;
+}
+
+/* Estilo de cada letra */
+.letter {
+  margin: 0 7px;
+  position: relative;
+  text-align: center;
+}
+
+/* Subrayado para las letras (línea inferior) */
+.letter::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  min-width: 12px;
+}
+
+/* Botón de inicio */
+#startButton {
+  margin-top: 20px;
+  appearance: none;
+  font-family: 'SF Pixelate', sans-serif;
+  border: none;
+  width: 300px;
+  padding: 10px;
+  background: #d95d39;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
