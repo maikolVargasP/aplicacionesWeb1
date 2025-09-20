@@ -11,7 +11,7 @@ const historyDisplay = document.getElementById('historyDisplay');
 const historyButton = document.getElementById('historyButton');
 const returnFromHistoryButton = document.getElementById('returnFromHistoryButton');
 const gameScreen = document.getElementById('gameScreen');
-const menuContainer = document.getElementById('menuContainer'); // Añade esta línea
+const menuContainer = document.getElementById('menuContainer'); 
 
 // Configuración del canvas para el ahorcado
 let canvas = document.getElementById('canvas');

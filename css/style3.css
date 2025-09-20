@@ -128,13 +128,13 @@ img{
   margin-bottom: 10px;
 }
 #historyButton {
-  margin-top: 10px; /* Ajusta la distancia si es necesario */
+  margin-top: 10px;
   appearance: none;
   font-family: 'SF Pixelate', sans-serif;
   border: none;
   width: 300px;
   padding: 10px;
-  background: #5c5c5c; /* Un color distinto para diferenciarlo */
+  background: #5c5c5c; 
   color: #fff;
   font-weight: 600;
   font-size: 20px;
