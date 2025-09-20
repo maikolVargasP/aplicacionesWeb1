@@ -4,31 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> PIXEL AHORCADO</title>
-
-   
+    <title>PIXEL AHORCADO</title>
     <link href="https://fonts.cdnfonts.com/css/sf-pixelate" rel="stylesheet">
     <link rel="stylesheet" href="../css/style3.css">
-    
-    
-    <script src="../js/palabras.js" defer></script>
-    <script src="../js/script3.js" defer></script>
 </head>
 <body>
-    <h1>Ahorcado Pixel</h1>
-    <div>
-        <canvas id="canvas"></canvas>
-        <div id="usedLetters"></div>
+    
+    <div id="menuContainer">
+        <h1>Ahorcado Pixel</h1>
+        <div class="select-wrapper">
+            <select id="categorySelect" class="custom-select">
+                <option value="animales">Animales</option>
+                <option value="frutas">Frutas</option>
+                <option value="paises">Países</option>
+                <option value="aleatorio">Aleatorio</option>
+            </select>
+        </div>
+        <button id="startButton">START</button>
+        <button id="historyButton">Historial</button>
     </div>
-    <select id="categorySelect">
-  <option value="animales">Animales</option>
-  <option value="frutas">Frutas</option>
-  <option value="paises">Países</option>
-  <option value="aleatorio">Aleatorio</option>
-  </select>
-    <div id="wordContainer"></div>
-    <button id="startButton">START</button>
-    <img src="../imagenes/silksong2.png" alt="silksong">
-</body>
 
+    <div id="gameScreen" class="ocultar">
+        <h1>Ahorcado Pixel</h1>
+        <div id="categoryDisplay" class="category-text"></div>
+        <div>
+            <canvas id="canvas"></canvas>
+            <div id="usedLetters"></div>
+        </div>
+        <div id="wordContainer"></div>
+        <button id="returnButton" class="ocultar">Volver</button>
+    </div>
+
+    <div id="statsContainer" class="ocultar">
+        <p id="statsDisplay"></p>
+        <div id="historyDisplay"></div>
+        <button id="returnFromHistoryButton">Volver</button>
+    </div>
+    
+    <img src="../imagenes/silksong2.png" alt="silksong" id="desaparecerimg" >
+
+    <script src="../js/palabras.js" defer></script>
+    <script src="../js/script3.js" defer></script>
+</body>
 </html>

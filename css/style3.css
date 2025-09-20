@@ -1,6 +1,12 @@
 .hidden{
     color: transparent;
 }
+.ocultar { 
+  display: none;
+}
+.visible-flex {
+  display: flex;
+}
 body{
     background-color: gray;
     color: white;
@@ -10,19 +16,24 @@ body{
     justify-content: center;
     align-items: center;
 }
-/* Contenedor de la palabra */
+
 #wordContainer {
   margin-top: 20px;
 }
+h1{
+ position: relative;
+ text-align: center;
+}
 
-/* Estilo de cada letra */
+
+
 .letter {
   margin: 0 7px;
   position: relative;
   text-align: center;
 }
 
-/* Subrayado para las letras (línea inferior) */
+
 .letter::after {
   content: '';
   display: block;
@@ -34,9 +45,9 @@ body{
   min-width: 12px;
 }
 
-/* Botón de inicio */
+
 #startButton {
-  margin-top: 20px;
+  margin-top: 10px;
   appearance: none;
   font-family: 'SF Pixelate', sans-serif;
   border: none;
@@ -51,7 +62,82 @@ body{
 }
 img{
    position: fixed;   
-  bottom: 0;         
-  left: 0;           
-  width: 200px;      
+  bottom: 0;             
+  width: 500px;      
+}
+.custom-select {
+  margin-top: 0px;
+  appearance: none;
+  font-family: 'SF Pixelate', sans-serif;
+  border: none;
+  width: 300px;
+  padding: 10px;
+  background: #d95d39;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center; 
+  align-items: center;
+}
+#returnButton {
+  margin-top: 20px;
+  appearance: none;
+  font-family: 'SF Pixelate', sans-serif;
+  border: none;
+  width: 300px;
+  padding: 10px;
+  background: #5c5c5c; 
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#returnFromHistoryButton {
+  margin-top: 20px;
+  appearance: none;
+  font-family: 'SF Pixelate', sans-serif;
+  border: none;
+  width: 300px;
+  padding: 10px;
+  background: #5c5c5c; 
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.select-wrapper {
+  
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 10px; 
+}
+.category-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+#historyButton {
+  margin-top: 10px; /* Ajusta la distancia si es necesario */
+  appearance: none;
+  font-family: 'SF Pixelate', sans-serif;
+  border: none;
+  width: 300px;
+  padding: 10px;
+  background: #5c5c5c; /* Un color distinto para diferenciarlo */
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
 }

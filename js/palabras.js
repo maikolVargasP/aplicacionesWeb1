@@ -1,4 +1,3 @@
-
 const categories = {
   animales: ["PERRO", "GATO", "ELEFANTE"],
   frutas: ["MANZANA", "BANANA", "FRESA"],
