@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="../css/styles.css">
  </head>
  <body>
-    
     <main>
+        <!-- Contenedor principal de la aplicación -->
         <div class="ventana"> 
-       <header>
+       <header>  <!-- Encabezado -->
            <h1>Administrador de Tareas</h1>
            <p>Organiza y gestiona tus tareas diarias de manera eficiente</p>
        </header>
+
+         <!-- Contadores -->
+
        <div class="contadores">
            <div class="contador">
                <h3>Total</h3>
@@ -29,12 +32,14 @@
            </div>
        </div>
        
+       <!-- Filtros de ingreso de tareas -->
        <div class="filtros">
            <input type="date" id="fecha-tarea">
            <input type="text" id="descripcion-tarea" placeholder="Descripción de la tarea">
            <button id="agregar-tarea"> + Agregar Tarea</button>
        </div>
-       
+       <!-- Filtros de búsqueda y estado -->
+      
        <div class="filtros">
            <input type="text" id="buscar-tarea" placeholder="Buscar tarea">
            <select id="filtro-estado">
@@ -43,12 +48,12 @@
                <option value="completadas">Completadas</option>
            </select>
        </div>  
-       
+       <!-- Sección de tareas pendientes -->
        <section id="seccion-pendientes">
            <h2>Tareas Pendientes</h2>
            <ul id="lista-pendientes"></ul>
        </section>
-       
+       <!-- Sección de tareas completadas -->
        <section id="seccion-completadas">
            <h2>Historial de Tareas Completadas</h2>
            <ul id="lista-completadas"></ul>
