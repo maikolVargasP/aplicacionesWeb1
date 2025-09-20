@@ -1,11 +1,11 @@
 // Variables del juego
-let cartas = [];
-let cartasVolteadas = [];
-let movimientos = 0;
-let paresEncontrados = 0;
-let juegoTerminado = false;
-let juegoActivo = false;
-let dificultad = 'facil';
+let cartas = []; // Array que almacena las cartas en el tablero
+let cartasVolteadas = []; // Array que almacena las cartas volteadas
+let movimientos = 0; // Número de movimientos realizados
+let paresEncontrados = 0; // Número de parejas encontradas
+let juegoTerminado = false; // Estado del juego
+let juegoActivo = false; //Controla sise puede jugar
+let dificultad = 'facil'; //Dificultad por defecto
 
 // Variables para el cronómetro
 let tiempoSegundos = 0;
@@ -47,7 +47,7 @@ const imagenes = [
     'images/equipo12.png',
 ];
 
-// Precargar imágenes
+// Precargar imágenes para evitar retraso al mostrarlas
 function precargarImagenes() {
     imagenes.forEach(src => {
         const img = new Image();
@@ -62,7 +62,7 @@ function formatearTiempo(segundos) {
     return `${min}:${seg}`;
 }
 
-// Función para iniciar el cronómetro
+// Iniciar el cronómetro
 function iniciarCronometro() {
     tiempoSegundos = 0;
     contadorTiempo.textContent = formatearTiempo(tiempoSegundos);
@@ -73,7 +73,7 @@ function iniciarCronometro() {
     }, 1000);
 }
 
-// Función para detener el cronómetro
+// Detener el cronómetro
 function detenerCronometro() {
     clearInterval(intervaloTiempo);
 }
@@ -88,7 +88,7 @@ function obtenerPuntuaciones() {
     };
 }
 
-// Guardar puntuaciones
+// Guardar puntuaciones en el localStorage
 function guardarPuntuaciones(puntuaciones) {
     localStorage.setItem('puntuacionesMemorama', JSON.stringify(puntuaciones));
 }
@@ -165,7 +165,7 @@ function limpiarPuntuaciones() {
     }
 }
 
-// Inicializar el juego
+// Inicializar el juego (crea cartas, reinicia contadores y tiempo)
 function inicializarJuego() {
     const config = configuraciones[dificultad];
 
@@ -218,7 +218,6 @@ function inicializarJuego() {
     juegoActivo = true;
     cartasVolteadas = [];
 
-    // Actualizar UI
     contadorIntentos.textContent = movimientos;
     mensajeGanador.style.display = 'none';
     mensajeRecord.textContent = '';
@@ -228,7 +227,7 @@ function inicializarJuego() {
     iniciarCronometro();
 }
 
-// Voltear una carta
+// Voltear una carta y comprobar si se ha encontrado una pareja
 function voltearCarta(carta) {
     if (!juegoActivo || juegoTerminado || cartasVolteadas.length >= 2 ||
         carta.classList.contains('volteada') ||

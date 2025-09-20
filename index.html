@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEMORAMA</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -14,8 +13,9 @@
         </header>
         
         <div class="juego-contenido">
-            <div class="panel-izquierdo">
+            <div class="panel-izquierdo"> <!-- Panel izquierdo: controles e información -->
                 <div class="seccion">
+                    <!-- Selección de dificultad -->
                     <h2><i class="fas fa-sliders-h"></i> Nivel de Dificultad</h2>
                     <div class="dificultad-opciones">
                         <button class="dificultad-btn facil activo">
@@ -29,12 +29,12 @@
                         </button>
                     </div>
                 </div>
-                
+                <!-- Intentos realizados -->
                 <div class="seccion">
                     <h2><i class="fas fa-redo"></i> Intentos</h2>
                     <div class="intentos">0</div>
                 </div>
-                
+                <!-- Botón para reiniciar -->
                 <div class="seccion">
                     <button class="reiniciar-btn">
                         <i class="fas fa-sync-alt"></i> Reiniciar Juego
@@ -61,6 +61,7 @@
                             No hay puntuaciones guardadas
                         </div>
                     </div>
+                    <!-- Botón para limpiar puntuaciones -->
                     <div class="botones-puntuaciones">
                         <button class="boton-puntuacion boton-limpiar" id="limpiar-puntuaciones">
                             <i class="fas fa-trash"></i> Limpiar
@@ -69,7 +70,7 @@
                 </div>
             </div>
             
-            <div class="panel-derecho">
+            <div class="panel-derecho"> <!-- Panel derecho: tablero y tiempo -->
                 <div class="seccion">
                     <h2><i class="fas fa-clock"></i> Tiempo</h2>
                     <div class="tiempo">00:00</div>
